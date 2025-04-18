@@ -1,0 +1,83 @@
+{
+    "stars": [
+      {
+        "name": "Sun",
+        "type": "G-type main-sequence",
+        "mass": 1.0,
+        "radius": 1.0,
+        "temperature": 5778,
+        "distance_lightyears": 0.0000158,
+        "luminosity": 1.0
+      },
+      {
+        "name": "Sirius",
+        "type": "A-type main-sequence",
+        "mass": 2.02,
+        "radius": 1.711,
+        "temperature": 9940,
+        "distance_lightyears": 8.6,
+        "luminosity": 25.4
+      },
+      {
+        "name": "Betelgeuse",
+        "type": "Red supergiant",
+        "mass": 11.6,
+        "radius": 887,
+        "temperature": 3500,
+        "distance_lightyears": 642.5,
+        "luminosity": 126000
+      }
+    ],
+    "planets": [
+      {
+        "name": "Earth",
+        "type": "Terrestrial",
+        "mass": 1.0,
+        "radius": 1.0,
+        "orbital_period_days": 365.25,
+        "distance_from_star_au": 1.0,
+        "has_life": true
+      },
+      {
+        "name": "Jupiter",
+        "type": "Gas giant",
+        "mass": 317.8,
+        "radius": 11.2,
+        "orbital_period_days": 4333,
+        "distance_from_star_au": 5.2,
+        "has_life": false
+      },
+      {
+        "name": "Kepler-186f",
+        "type": "Terrestrial",
+        "mass": 1.4,
+        "radius": 1.1,
+        "orbital_period_days": 130,
+        "distance_from_star_au": 0.4,
+        "has_life": "Unknown"
+      }
+    ],
+    "galaxies": [
+      {
+        "name": "Milky Way",
+        "type": "Spiral",
+        "diameter_lightyears": 100000,
+        "stars_count": "100-400 billion",
+        "distance_lightyears": 0
+      },
+      {
+        "name": "Andromeda",
+        "type": "Spiral",
+        "diameter_lightyears": 220000,
+        "stars_count": "1 trillion",
+        "distance_lightyears": 2537000
+      },
+      {
+        "name": "Triangulum",
+        "type": "Spiral",
+        "diameter_lightyears": 60000,
+        "stars_count": "40 billion",
+        "distance_lightyears": 3000000
+      }
+    ]
+  }

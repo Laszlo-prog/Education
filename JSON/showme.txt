@@ -1,0 +1,124 @@
+Json File Structure
+
+{
+  "users": [
+    {"id": 1, "name": "Alice", "purchases": [{"item": "book", "price": 15}]},
+    {"id": 2, "name": "Bob", "purchases": [{"item": "laptop", "price": 999}]},
+    // ... millions more records
+  ]
+}
+
+
+
+Baasic Element:
+
+import ijson
+
+def process_large_json(file_path):
+    with open(file_path, 'rb') as f:
+        # Stream through each user in the 'users' array
+        users = ijson.items(f, 'users.item')
+        
+        for user in users:
+            # Process one user at a time
+            print(f"Processing user: {user['name']}")
+            # Do something with each user...
+            
+process_large_json('users.json')
+
+2. Data Procesing;
+
+def extract_names(file_path):
+    names = []
+    with open(file_path, 'rb') as f:
+        for prefix, event, value in ijson.parse(f):
+            if prefix == 'users.item.name':
+                names.append(value)
+                # Yield for generator pattern
+                yield value
+                
+    # Alternative: Direct item access
+    # with open(file_path, 'rb') as f:
+    #     for name in ijson.items(f, 'users.item.name'):
+    #         yield name
+
+# Usage
+for name in extract_names('users.json'):
+    print(f"Found user: {name}")
+
+Filtering Data while streaming:
+
+def find_big_spenders(file_path):
+    with open(file_path, 'rb') as f:
+        users = ijson.items(f, 'users.item')
+        
+        for user in users:
+            total_spent = sum(purchase['price'] for purchase in user['purchases'])
+            if total_spent > 100:
+                yield user
+
+# Process matching users
+for big_spender in find_big_spenders('users.json'):
+    print(f"Big spender: {big_spender['name']}")
+
+
+Handling Some Arrays:
+
+def process_purchases(file_path):
+    with open(file_path, 'rb') as f:
+        purchases = ijson.items(f, 'users.item.purchases.item')
+        
+        for purchase in purchases:
+            # Process each purchase individually
+            if purchase['price'] > 50:
+                print(f"Expensive item: {purchase['item']}")
+
+process_purchases('users.json')
+
+Progress With data:
+
+from tqdm import tqdm
+
+def process_with_progress(file_path):
+    with open(file_path, 'rb') as f:
+        # First count approximate items (fast)
+        f.seek(0, 2)  # Seek to end
+        file_size = f.tell()
+        f.seek(0)
+        
+        with tqdm(total=file_size, unit='B', unit_scale=True) as pbar:
+            users = ijson.items(f, 'users.item')
+            for user in users:
+                # Process user...
+                pbar.update(f.tell() - pbar.n)  # Update progress
+
+process_with_progress('users.json')
+
+Writting some Data:
+
+import json
+
+def transform_and_save(input_path, output_path):
+    with open(input_path, 'rb') as infile, \
+         open(output_path, 'w') as outfile:
+        
+        outfile.write('[')  # Start array
+        
+        first = True
+        for user in ijson.items(infile, 'users.item'):
+            if not first:
+                outfile.write(',')
+            first = False
+            
+            # Transform data
+            transformed = {
+                'user_id': user['id'],
+                'total_spent': sum(p['price'] for p in user['purchases'])
+            }
+            
+            json.dump(transformed, outfile)
+        
+        outfile.write(']')  # Close array
+
+transform_and_save('users.json', 'summary.json')
+
