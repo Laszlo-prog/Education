@@ -1,0 +1,20 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+#date personale despre angajati
+
+data = {
+     "nume":['Camilia', 'Mihai', 'Oneac', 'Catalin'],
+     "prenume":
+     "varsta":[31, 38, 28, 25],
+     "sex":['Feminin', 'Masculin', 'Masculin', 'Masculin'],
+     "departament":['Coordonator', 'Operator', 'Manager', 'Technician'],
+     "oras":['Pecica', 'Santoma', 'Olar', 'Sicula']
+		
+
+
+
+}
+
+
