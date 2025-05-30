@@ -1,0 +1,21 @@
+{"Usa":[
+    {"marca": "Mercedes", "model": "GLS", "fabricat":"2015"},
+    {"marca": "Ford ", "model": "Mondeo ", "fabricat":"2017"},
+    {"marca": " Porsche", "model": "Cayenne ", "fabricat":"2016"},
+    {"marca": " Skoda", "model": "Fabia ", "fabricat":"2011"},
+    {"marca": " Toyota", "model": "Verso ", "fabricat":"2012"},
+    {"marca": "Seat ", "model": " Alhambra", "fabricat":"2014"},
+    {"marca": " Audi", "model": "A5 ", "fabricat":"2018"},
+    {"marca": "Hyundai ", "model": "Tucson ", "fabricat":"2016"},
+    {"marca": "Nissan ", "model": " Micra", "fabricat":"2010"},
+    {"marca": "BMW ", "model": " X3", "fabricat":"2017"},
+    {"marca": " BMW", "model": " X4", "fabricat":"2019"},
+    {"marca": " Citroen", "model": "Picasso ", "fabricat":"2016"},
+    {"marca": " Subaru", "model": "Forester ", "fabricat":"2017"},
+    {"marca": " Tesla", "model": "Model S ", "fabricat":"2016"},
+    {"marca": "Volkswagen ", "model": "Golf5 ", "fabricat":"2018"},
+    {"marca": "Mazda ", "model": " CX5", "fabricat":"2011"}, 
+    {"marca": " Mitsubishi", "model": "L200 ", "fabricat":"2019"}
+
+
+]}
