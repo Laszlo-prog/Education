@@ -1,0 +1,18 @@
+import random
+
+#Predefined lists of first and last names
+
+first_names = ["Marta", "Carmen", "Lili", "Mirela", "Marius", "Stefan"]
+last_name = ["Keller", "Rafael", "Stoica", "Nathan", "Stana", "Levi"]
+
+#Function generate to above.
+def generate_name():
+	first_name = random.choice(first_names)
+	last_name = random.choice(last_names)
+        return f"{first_name} {last_name}"
+
+
+#Generate and print 5 random names
+
+For _ in range(5):
+    print(generate_name())

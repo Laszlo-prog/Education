@@ -1,0 +1,22 @@
+DATA ANALYSIS REPORT
+==================================================
+
+1. Dataset Overview
+--------------------
+Number of rows: 20124
+Number of columns: 7
+
+2. Missing Values Summary
+--------------------
+year: 0 missing values
+industry_code_ANZSIC: 0 missing values
+industry_name_ANZSIC: 0 missing values
+rme_size_grp: 0 missing values
+variable: 0 missing values
+value: 0 missing values
+unit: 0 missing values
+
+3. Statistical Summary
+--------------------
+
+year:
