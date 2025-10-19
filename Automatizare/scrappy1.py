@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Step 1: Fetch the web page
-url = 'https://redtube.com/redtube/lesbian'
+url = 'www.google.com'
 response = requests.get(url)
 
 # Step 2: Parse the HTML content
